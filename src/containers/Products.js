@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Product from '../components/Product';
 
 class Products extends Component {
     state = {
@@ -30,14 +31,7 @@ class Products extends Component {
                     <div className='row'>
                         {
                             this.state.products.map(product => (
-                                <div className="card col-4" >
-                                    <img src={product.url} className="card-img-top" alt={product.title} />
-                                    <div className="card-body">
-                                        <h5 className="card-title">{product.title}</h5>
-                                        <p className="card-text">{product.description}</p>
-                                        <a href="#" className="btn btn-primary">View product</a>
-                                    </div>
-                                </div>
+                                <Product key={product.id} product={product} />
                             ))
                         }
                     </div>
