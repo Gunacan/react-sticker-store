@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Product from '../components/Product';
+import getAllProducts from '../API';
 
 class Products extends Component {
     state = {
@@ -8,11 +9,8 @@ class Products extends Component {
     }
 
     componentDidMount() {
-        const API_URL = 'http://localhost:3000/api/v1/stickers';
-        fetch(API_URL)
-            .then(res => res.json())
+        getAllProducts()
             .then(products => {
-                console.log(products)
                 setTimeout(() => {
                     this.setState({
                         products : products,
