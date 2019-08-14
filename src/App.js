@@ -7,6 +7,7 @@ import LandingPage from './components/LandingPage';
 import NotFound from './components/NotFound';
 import Products from './containers/Products';
 import ViewProduct from './containers/ViewProduct';
+import CreateProduct from './containers/CreateProduct';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route exact path = '/' component = {LandingPage} />
           <Route exact path = '/products' component = {Products} />
+          <Route exact path = '/products/create' component = {CreateProduct} />
           <Route path = '/products/:id' component = {ViewProduct} />
           <Route path = '*' component = {NotFound} />
         </Switch>

@@ -22,7 +22,7 @@ class ViewProduct extends Component {
     }
 
     render() {
-        return this.state.isLoading ? <h2>Product is loading...</h2> : <Product product={this.state.product} cols='col-12' />
+        return this.state.isLoading ? <h2>Product is loading...</h2> : <Product product={this.state.product} cols='col-6' showRating={true} showEdit={true} />
     }
 }
 
