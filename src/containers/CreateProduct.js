@@ -12,11 +12,15 @@ class CreateProduct extends Component {
         creating: false
     };
 
+    createProduct = (product) => {
+        console.log(product)
+    }
+
     render() {
         return (
             <div>
                 <h1>Create Product</h1>
-                <ProductForm product={this.state.product} />
+                <ProductForm product={this.state.product} onFormSumbission={this.createProduct} />
             </div>
         );
     }

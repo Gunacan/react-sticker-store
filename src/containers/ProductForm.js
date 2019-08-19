@@ -16,9 +16,21 @@ class ProductForm extends Component {
         }))
     }
 
+    isValid = () => {
+        const { product } = this.state;
+        const validTitle = product.title.trim() !== '';
+        const validDescription = product.description.trim() !== '';
+        const validRating = !isNaN(product.rating) && Number(product.rating) >= 1;
+        const validUrl = product.url !== '';
+
+        return validTitle && validDescription && validRating && validUrl;
+    }
+
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log(this.state.product)
+        if(this.isValid()) {
+            this.props.onFormSumbission(this.state.product)
+        }
     }
 
     render() {
