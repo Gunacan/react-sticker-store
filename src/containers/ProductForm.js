@@ -11,7 +11,6 @@ class ProductForm extends Component {
             product: {
                 ...prevState.product,
                 [name]: value
-                
             }
         }))
     }

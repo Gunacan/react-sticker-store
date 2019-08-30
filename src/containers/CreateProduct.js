@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 import ProductForm from './ProductForm';
+import { createProduct } from '../API';
 
 class CreateProduct extends Component {
     state = {
@@ -13,8 +15,14 @@ class CreateProduct extends Component {
     };
 
     createProduct = (product) => {
-        console.log(product)
-    }
+        this.setState({
+            creating: true
+        })
+        createProduct(product)
+            .then(result => {
+                this.props.history.push(`/products/${result.id}`)
+            })
+    };
 
     render() {
         return (
@@ -26,4 +34,4 @@ class CreateProduct extends Component {
     }
 }
 
-export default CreateProduct;
+export default withRouter(CreateProduct);
