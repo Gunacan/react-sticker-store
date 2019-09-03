@@ -20,7 +20,7 @@ class CreateProduct extends Component {
         })
         createProduct(product)
             .then(result => {
-                this.props.history.push(`/products/${result.id}`)
+                this.props.history.push(`/products/${result.id}`)  //redirecting the user to the view product page of that specific product tha just got created. 
             })
     };
 
@@ -34,4 +34,4 @@ class CreateProduct extends Component {
     }
 }
 
-export default withRouter(CreateProduct);
+export default withRouter(CreateProduct);  // React router feature to programatically redirect to a different route. 
